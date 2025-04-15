@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Superpower Brain Test</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="parallax-container">
+    <!-- Parallax Background Layers -->
+    <div class="parallax-layer layer-bg" data-speed="0.1"></div>
+    <div class="parallax-layer layer-mid" data-speed="0.3"></div>
+    <div class="parallax-layer layer-fore" data-speed="0.6"></div>
+
+    <!-- Floating Elements -->
+    <div class="floating-holograms">
+        <div class="hologram hologram-1"></div>
+        <div class="hologram hologram-2"></div>
+        <div class="hologram hologram-3"></div>
+    </div>
+
+    <div class="data-streams">
+        <div class="stream stream-1"></div>
+        <div class="stream stream-2"></div>
+        <div class="stream stream-3"></div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="content">
+        <!-- Intro Screen -->
+        <div class="screen" id="intro-screen">
+            <div class="neuro-card">
+                <h1>SUPERPOWER BRAIN TEST</h1>
+                <div class="brain-scan-animation"></div>
+                <p>Discover your hidden neural abilities through advanced cognitive analysis</p>
+                <button class="glow-button" id="start-test">INITIALIZE SCAN</button>
+            </div>
+        </div>
+
+        <!-- Question Screens -->
+        <div class="screen question-screen" id="question-container">
+            <div class="lab-equipment">
+                <div class="equipment-item dna-model"></div>
+                <div class="equipment-item scanner"></div>
+                <div class="equipment-item control-panel">
+                    <div class="panel-button" id="panel-button-1"></div>
+                    <div class="panel-button" id="panel-button-2"></div>
+                    <div class="panel-button" id="panel-button-3"></div>
+                </div>
+            </div>
+
+            <div class="neuro-card question-card">
+                <div class="question-number">NEURAL PROBE <span id="current-question">1</span>/<span id="total-questions">8</span></div>
+                <h2 id="question-text">Question text will appear here</h2>
+                <div class="answers-container" id="answers-container">
+                    <!-- Answers will be inserted here by JavaScript -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Mini-game Screen -->
+        <div class="screen" id="minigame-screen">
+            <div class="neuro-card emergency-card">
+                <div class="alert-icon"></div>
+                <h2>NEURAL EMERGENCY!</h2>
+                <p>Rapidly tap the fluctuating synapse to stabilize!</p>
+                <div class="emergency-button" id="emergency-button">
+                    <span>TAP!</span>
+                </div>
+                <div class="timer-bar">
+                    <div class="timer-progress" id="timer-progress"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Results Screen -->
+        <div class="screen" id="results-screen">
+            <div class="neuro-card results-card">
+                <h2>NEURAL ANALYSIS COMPLETE</h2>
+                <div class="brain-model-container">
+                    <div class="brain-model">
+                        <div class="brain-region region-1" id="region-1"></div>
+                        <div class="brain-region region-2" id="region-2"></div>
+                        <div class="brain-region region-3" id="region-3"></div>
+                        <div class="brain-region region-4" id="region-4"></div>
+                    </div>
+                </div>
+
+                <div class="results-breakdown">
+                    <h3>YOUR SUPERPOWER PROFILE</h3>
+                    <div class="power-bars">
+                        <div class="power-bar">
+                            <span class="power-name">Chaos Engine</span>
+                            <div class="bar-container">
+                                <div class="bar-fill" id="power-1"></div>
+                            </div>
+                            <span class="power-percent" id="power-1-percent">0%</span>
+                        </div>
+                        <div class="power-bar">
+                            <span class="power-name">Time Bender</span>
+                            <div class="bar-container">
+                                <div class="bar-fill" id="power-2"></div>
+                            </div>
+                            <span class="power-percent" id="power-2-percent">0%</span>
+                        </div>
+                        <div class="power-bar">
+                            <span class="power-name">Mind Weaver</span>
+                            <div class="bar-container">
+                                <div class="bar-fill" id="power-3"></div>
+                            </div>
+                            <span class="power-percent" id="power-3-percent">0%</span>
+                        </div>
+                        <div class="power-bar">
+                            <span class="power-name">Energy Conduit</span>
+                            <div class="bar-container">
+                                <div class="bar-fill" id="power-4"></div>
+                            </div>
+                            <span class="power-percent" id="power-4-percent">0%</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="result-title" id="result-title">YOUR RESULT TITLE</div>
+                <p class="result-description" id="result-description">Your personalized result description will appear here.</p>
+
+                <div class="share-container">
+                    <button class="glow-button" id="share-result">GENERATE SHAREABLE RESULT</button>
+                </div>
+
+                <button class="glow-button" id="restart-test">RECALIBRATE SCAN</button>
+            </div>
+        </div>
+
+        <!-- Share Overlay -->
+        <div id="share-overlay" class="share-overlay">
+            <div class="share-card">
+                <div class="share-header">
+                    <h3>SUPERPOWER BRAIN TEST</h3>
+                    <div class="close-button" id="close-share">×</div>
+                </div>
+                <div class="share-content" id="share-content">
+                    <div class="share-result-title" id="share-result-title"></div>
+                    <div class="share-power-breakdown" id="share-power-breakdown"></div>
+                </div>
+                <div class="share-buttons">
+                    <button class="share-button" id="download-result">DOWNLOAD</button>
+                    <button class="share-button" id="copy-result">COPY LINK</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Audio Elements -->
+<audio id="ambient-sound" loop>
+    <source src="ambient.mp3" type="audio/mpeg">
+</audio>
+<audio id="button-sound">
+    <source src="button.mp3" type="audio/mpeg">
+</audio>
+<audio id="alert-sound">
+    <source src="alert.mp3" type="audio/mpeg">
+</audio>
+<audio id="complete-sound">
+    <source src="complete.mp3" type="audio/mpeg">
+</audio>
+
+<script src="script.js"></script>
+</body>
+</html>
